@@ -1,13 +1,22 @@
-
 #include <stdio.h>
-/**
-* main - Entry
-* Return: 0 (success)
-*/
 
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-printf("with proper grammar, but the outcome
-is a piece of art,\n");
-return (0);
+	char *art = "a piece of art,";
+	char *genius = "a work of pure genius,";
+	char *vision = "artistic vision.";
+
+	printf("%s%s%s%s%s%s %s\n",
+	       "First line #!/bin/bash must be included",
+	       "\n\nThis program creates, with proper grammar,", art,
+	       " that will leave you in awe.", genius,
+	       " a stunning display of creativity and skill,", vision);
+
+	return (0);
 }
+
