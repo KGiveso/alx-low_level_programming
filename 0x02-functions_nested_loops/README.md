@@ -1,1 +1,1 @@
-In this activity we will go through Functions and Nested Loops 
+This activity will be based on Functions and Nested Loops
