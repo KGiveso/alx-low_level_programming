@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include "main.h"
 /**
-* main - Entry point
+* _puts - Prints a string to stdout followed by a newline character
+* @str: The string to print
 *
-* Return: Always 0 (Success)
+* Return: None
 */
 void _puts(char *str)
 {
