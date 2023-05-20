@@ -1,38 +1,32 @@
 #include "lists.h"
 
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index) {
-  dlistint_t *current = *head;
-  dlistint_t *prev = NULL;
+/**
+ * add_dnodeint -  add new node to beginning of the list
+ * @head: pointer to head of the list
+ * @n: value the new node will hold
+ * Return: adress of the new node or NULL if failed
+ */
 
-  // Check if the list is empty.
-  if (current == NULL) {
-    return 0;
-  }
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+{
+	dlistint_t *new_node = malloc(sizeof(dlistint_t));
 
-  // Find the node at the given index.
-  for (unsigned int i = 0; i < index; i++) {
-    prev = current;
-    current = current->next;
-
-    // Check if the index is out of bounds.
-    if (current == NULL) {
-      return 0;
-    }
-  }
-
-  // Delete the node.
-  if (prev == NULL) {
-    // This is the first node in the list.
-    *head = current->next;
-  } else {
-    // This is not the first node in the list.
-    prev->next = current->next;
-  }
-
-  // Free the memory allocated for the node.
-  free(current);
-
-  return 1;
+	if (!new_node)
+		return (NULL);
+	if (*head == NULL)
+	{
+		new_node->next = NULL;
+		new_node->prev = NULL;
+		new_node->n = n;
+		(*head) = new_node;
+		return (*head);
+	}
+	new_node->next = *head;
+	new_node->prev = NULL;
+	new_node->n = n;
+	(*head)->prev = new_node;
+	(*head) = new_node;
+	return (*head);
 }
 
-
+  
