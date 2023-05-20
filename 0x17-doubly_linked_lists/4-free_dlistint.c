@@ -1,11 +1,13 @@
+	
+#include "your_header_file.h"  // Replace with your actual header file
+
 void free_dlistint(dlistint_t *head) {
-  dlistint_t *current_node = head;
-  while (current_node != NULL) {
-    dlistint_t *next_node = current_node->next;
-    free(current_node);
-    current_node = next_node;
-  }
+    dlistint_t *current = head;
+
+    while (current != NULL) {
+        dlistint_t *next = current->next;
+        free(current);
+        current = next;
+    }
 }
 
-
-	
