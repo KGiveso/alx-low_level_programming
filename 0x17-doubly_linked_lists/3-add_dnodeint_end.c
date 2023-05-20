@@ -1,13 +1,57 @@
 #include "lists.h"
 
-#include "your_header_file.h"  // Replace with your actual header file
+/**
 
-void free_dlistint(dlistint_t *head) {
-    dlistint_t *current = head;
+ * add_dnodeint_end - adds a new node at the end of a dlistint_t list.
 
-    while (current != NULL) {
-        dlistint_t *next = current->next;
-        free(current);
-        current = next;
-    }
-}
+ * @head: double linked list
+
+ * @n: number member
+
+ * Return: the address of the new element, or NULL if it failed
+
+ */
+
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+
+{
+
+ dlistint_t *new, *tmp;
+
+ new = malloc(sizeof(dlistint_t));
+
+ if (!new)
+
+  return (NULL);
+
+ new->n = n;
+
+ new->next = NULL;
+
+ tmp = *head;
+
+ if (!(tmp))
+
+ {
+
+  new->prev = NULL;
+
+  *head = new;
+
+ }
+
+ else
+
+ {
+
+  while (tmp->next)
+
+   tmp = tmp->next;
+
+  tmp->next = new;
+
+  new->prev = tmp;
+
+ }
+
+ return (new);
