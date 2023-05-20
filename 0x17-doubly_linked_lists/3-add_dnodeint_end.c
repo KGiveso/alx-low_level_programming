@@ -1,5 +1,4 @@
-Bytes
-#include "lists.h"
+include "lists.h"
 
 /**
  * add_dnodeint_end - adds a new node at the end of a doubly linked list
@@ -38,8 +37,3 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	return (new);
  }
-
-
- 
-
-
