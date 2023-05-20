@@ -10,18 +10,19 @@
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *new_element;
+	dlistint_t *new;
 
-	new_element = malloc(sizeof(dlistint_t));
+	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
 
-	new_element->n = n;
-	new_element->prev = NULL;
-	new_element->next = *head;
+	new->n = n;
+	new->prev = NULL;
+	new->next = *head;
 	if (*head != NULL)
-		(*head)->prev = new_element;
-	*head = new_element;
+		(*head)->prev = new;
+	*head = new;
 
-	return (new_element);
+	return (new);
 }
+	
