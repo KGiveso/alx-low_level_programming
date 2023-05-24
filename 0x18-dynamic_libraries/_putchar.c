@@ -1,14 +1,11 @@
 #include "main.h"
-
 /**
-* _putchar -write a single character to std output 
+* _putchar -write a single character to std output
 *Return zero
 */
+void main(void)
+{
+	char c = 'A';
 
-int main() {
-  char c = 'A';
-
-  _putchar(c);
-
-  return 0;
+	_putchar(c);
 }

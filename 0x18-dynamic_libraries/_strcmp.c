@@ -18,11 +18,13 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (s1[j] == '\0' && s2[j] == '\0')
 			break;
+
 		else if (s1[j] == '\0')
 		{
-			 diff = s2[j];
+			diff = s2[j];
 			break;
 		}
+
 		else if (s2[j] == '\0')
 		{
 			diff = s1[j];
